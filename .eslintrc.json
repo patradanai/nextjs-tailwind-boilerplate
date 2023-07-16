@@ -84,15 +84,19 @@
       "check-file/folder-naming-convention": [
           "error",
           {
-              "src/pages/**/": "@(+([a-z])*(-+([a-z]))|\\[+([a-z])*(-+([a-z]))\\])",
-              "src/components/**/": "KEBAB_CASE"
+              "src/app/**/": "@(+([a-z])*(-+([a-z]))|\\[+([a-z])*(-+([a-z]))\\])",
+              "src/components/layouts/**/": "PASCAL_CASE",
+              "src/components/ui/**/": "PASCAL_CASE",
+              "src/components/templates/**/": "PASCAL_CASE"
           }
       ],
       "check-file/filename-naming-convention": [
           "error",
           {
-              "src/pages/**/*.{ts,tsx}": "@(+([a-z0-9_-])*(-+([a-z]))|\\[+([a-z0-9_-])*(-+([a-z]))\\])",
-              "src/components/**/*.{ts,tsx}": "KEBAB_CASE"
+              "src/app/**/*.{ts,tsx}": "@(+([a-z0-9_-])*(-+([a-z]))|\\[+([a-z0-9_-])*(-+([a-z]))\\])",
+              "src/components/layouts/**/": "PASCAL_CASE",
+              "src/components/ui/**/": "PASCAL_CASE",
+              "src/components/templates/**/": "PASCAL_CASE"
           }
       ],
 
@@ -149,10 +153,11 @@
       ],
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-empty-interface": "off",
 
       // REACT RULE
-      "react/react-in-jsx-scope": "error",
-      "react/jsx-uses-react": "error",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "off",
       "react/jsx-uses-vars": "error",
       "react/jsx-filename-extension": [
           "warn",

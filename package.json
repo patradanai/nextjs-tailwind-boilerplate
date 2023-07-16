@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "npx plop --plopfile ./.plop/plopfile.js"
   },
   "dependencies": {
     "@types/node": "20.4.2",
@@ -26,10 +27,17 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-check-file": "^2.5.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-tailwindcss": "^3.13.0"
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "install": "^0.13.0",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
+    "npm": "^9.8.0",
+    "plop": "^3.1.2"
   }
 }
