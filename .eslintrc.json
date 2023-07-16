@@ -1,3 +1,182 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": [
+      "next",
+      "next/core-web-vitals",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:tailwindcss/recommended",
+      "prettier"
+  ],
+  "plugins": ["check-file", "prettier"],
+  "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "env": {
+      "browser": true,
+      "node": true
+  },
+  "settings": {
+      "react": {
+          "version": "detect"
+      }
+  },
+  "overrides": [
+      {
+          "files": ["./src/**/*.ts", "./src/**/*.tsx"]
+      }
+  ],
+  "rules": {
+      "react-hooks/exhaustive-deps": "off",
+      "prettier/prettier": "error",
+      "quotes": [
+          "error",
+          "single",
+          { "avoidEscape": true, "allowTemplateLiterals": false }
+      ],
+      "no-confusing-arrow": ["error", { "allowParens": false }],
+      "no-unused-vars": [
+          2,
+          {
+              "vars": "all",
+              "args": "after-used",
+              "ignoreRestSiblings": true,
+              "caughtErrors": "none",
+              "varsIgnorePattern": "^_",
+              "argsIgnorePattern": "^_"
+          }
+      ],
+      "object-curly-spacing": ["error", "always"],
+      "no-multi-spaces": "error",
+      "no-multiple-empty-lines": "error",
+      "no-console": [
+          2,
+          {
+              "allow": ["warn", "error"]
+          }
+      ],
+      "import/order": [
+          "error",
+          {
+              "groups": ["builtin", "external", "internal"],
+              "pathGroups": [
+                  {
+                      "pattern": "react",
+                      "group": "external",
+                      "position": "before"
+                  }
+              ],
+              "pathGroupsExcludedImportTypes": ["react"],
+              "newlines-between": "always",
+              "alphabetize": {
+                  "order": "asc",
+                  "caseInsensitive": true
+              }
+          }
+      ],
+
+      // FileName, Folder convention
+      "check-file/folder-naming-convention": [
+          "error",
+          {
+              "src/pages/**/": "@(+([a-z])*(-+([a-z]))|\\[+([a-z])*(-+([a-z]))\\])",
+              "src/components/**/": "KEBAB_CASE"
+          }
+      ],
+      "check-file/filename-naming-convention": [
+          "error",
+          {
+              "src/pages/**/*.{ts,tsx}": "@(+([a-z0-9_-])*(-+([a-z]))|\\[+([a-z0-9_-])*(-+([a-z]))\\])",
+              "src/components/**/*.{ts,tsx}": "KEBAB_CASE"
+          }
+      ],
+
+      // Tailwind
+      "tailwindcss/no-custom-classname": [
+          0,
+          {
+              "whitelist": ["(?!(bg|text)\\-).*"]
+          }
+      ],
+
+      // Typecript
+      "@typescript-eslint/naming-convention": [
+          "error",
+          {
+              "selector": ["function", "objectLiteralMethod"],
+              "format": ["PascalCase", "camelCase"]
+          },
+          {
+              "selector": ["typeProperty", "typeParameter"],
+              "format": ["camelCase", "snake_case", "PascalCase"]
+          },
+          {
+              "selector": "class",
+              "format": ["PascalCase"]
+          },
+          {
+              "selector": "typeParameter",
+              "format": ["PascalCase"]
+          },
+          {
+              "selector": "interface",
+              "format": ["PascalCase"],
+              "prefix": ["I"],
+              "filter": {
+                  "regex": "Props",
+                  "match": false
+              }
+          },
+          {
+              "selector": "enumMember",
+              "format": ["PascalCase"]
+          },
+          {
+              "selector": "property",
+              "format": ["camelCase"],
+              "filter": {
+                  "regex": "[- ]|[. ]",
+                  "match": false
+              },
+              "leadingUnderscore": "allow",
+              "trailingUnderscore": "allow"
+          }
+      ],
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+
+      // REACT RULE
+      "react/react-in-jsx-scope": "error",
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/jsx-filename-extension": [
+          "warn",
+          { "extensions": [".ts", ".tsx"] }
+      ],
+      "react/display-name": "warn",
+      "react/prop-types": "off",
+      "react/no-unknown-property": "off", // Nextjs use jsx
+
+      // ALLY11
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": [
+          "error",
+          {
+              "handlers": [
+                  "onClick",
+                  "onMouseDown",
+                  "onMouseUp",
+                  "onKeyPress",
+                  "onKeyDown",
+                  "onKeyUp"
+              ]
+          }
+      ]
+  }
 }
