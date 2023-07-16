@@ -54,13 +54,13 @@ module.exports = {
             // component
             {
                 type: 'add',
-                path: `${componentsPath}/${data.action}/{{properCase name}}.tsx`,
+                path: `${componentsPath}/${data.action}/{{properCase name}}/{{properCase name}}.tsx`,
                 templateFile: './components/{{type}}.tsx.hbs',
             },
             // test
             {
                 type: 'add',
-                path: `${componentsPath}/${data.action}/{{properCase name}}.test.tsx`,
+                path: `${componentsPath}/${data.action}/{{properCase name}}/{{properCase name}}.test.tsx`,
                 templateFile: './components/{{type}}.spec.tsx.hbs',
             },
         ]
