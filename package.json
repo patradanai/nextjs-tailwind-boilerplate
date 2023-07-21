@@ -10,7 +10,8 @@
     "lint:fix": "next lint --fix",
     "prettier": "npx prettier src test --check",
     "prettier:fix": "npm run prettier -- --write",
-    "generate": "npx plop --plopfile ./.plop/plopfile.js"
+    "generate": "npx plop --plopfile ./.plop/plopfile.js",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@t3-oss/env-core": "^0.6.0",
