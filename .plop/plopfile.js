@@ -7,6 +7,6 @@ const modulePage = require('./pages/config')
 module.exports = function (plop) {
     plop.setGenerator('component', component)
     plop.setGenerator('module', moduleComponent)
-    plop.setGenerator('store', moduleStore)
+    plop.setGenerator('store', { ...moduleStore(plop) })
     plop.setGenerator('page', modulePage)
 }

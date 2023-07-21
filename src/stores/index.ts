@@ -2,13 +2,14 @@ import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
 
 import { IAuthSlice, createAuthStore } from './slices/createAuthSlice'
-// COMPONENT IMPORTS
+// COMPONENT IMPORTS -- DO NOT REMOVE COMMENT!
 
-type StoreState = IAuthSlice
+type StoreState = IAuthSlice 
+    // TYPE -- DO NOT REMOVE COMMENT!
 
 export const useAppStores = create<StoreState>()(
     devtools((...v) => ({
         ...createAuthStore(...v),
-        // STORE EXPORTS
+        // STORE -- DO NOT REMOVE COMMENT!
     }))
 )
