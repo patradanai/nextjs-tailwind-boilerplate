@@ -1,8 +1,19 @@
 # Boilerplate and Starter for Next JS 13+, Tailwind CSS 3 and TypeScript
 
+## Package
 
+- NextJS
+- Css Impletement with Tailwind CSS
+- Zustand
+- React Query
+- Eslint for Code Quality
+- Prettier for Format Quality
+- Test with Jest and React Test
+- Plopjs for Generate Folder Component, Modular
 
+## State Management
 
+## Test
 
 ## Generating components
 
@@ -10,7 +21,7 @@
 yarn generate Button
 ```
 
-```
+``` text
 └── components
       └── ui
         └── Button
