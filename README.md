@@ -2,14 +2,15 @@
 
 ## Package
 
-- NextJS
-- Css Impletement with Tailwind CSS
+- NextJS ( App Directory )
+- CSS Impletement with Tailwind CSS
 - Zustand
 - React Query
 - Eslint for Code Quality
 - Prettier for Format Quality
 - Test with Jest and React Test
 - Plopjs for Generate Folder Component, Modular
+- Next-SEO
 
 ## State Management
 
