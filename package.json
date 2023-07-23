@@ -12,9 +12,15 @@
     "prettier": "npx prettier src test --check",
     "prettier:fix": "npm run prettier -- --write",
     "generate": "npx plop --plopfile ./.plop/plopfile.js",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@t3-oss/env-core": "^0.6.0",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
@@ -39,6 +45,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-check-file": "^2.5.0",
