@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { colors as defaultColors } from 'tailwindcss/defaultTheme'
+
 function withOpacityValue(variable) {
     return ({ opacityVariable, opacityValue }) => {
         if (opacityValue !== undefined) {
@@ -41,6 +42,7 @@ module.exports = {
                 ...defaultColors,
                 primary: withOpacityValue('--tw-color-primary'),
                 secondary: withOpacityValue('--tw-color-secondary'),
+                success: '#206521',
                 warning: '#FBBF24',
                 error: '#EF4444',
             },
