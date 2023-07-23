@@ -1,4 +1,6 @@
 import '@/styles/globals.css'
+import '@/configs/fontawesome'
+
 import React from 'react'
 
 import type { Metadata } from 'next'
