@@ -1,18 +1,50 @@
+/* eslint-disable */
+import { colors as defaultColors } from 'tailwindcss/defaultTheme'
+function withOpacityValue(variable) {
+    return ({ opacityVariable, opacityValue }) => {
+        if (opacityValue !== undefined) {
+            return `rgba(var(${variable}), ${opacityValue})`
+        }
+        if (opacityVariable !== undefined) {
+            return `rgba(var(${variable}), var(${opacityVariable}, 1))`
+        }
+        return `rgb(var(${variable}))`
+    }
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    content: [
+        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    ],
+    theme: {
+        container: {
+            padding: {
+                DEFAULT: '1rem',
+                md: '4rem',
+                '2xl': '12rem',
+            },
+        },
+        extend: {
+            animation: {
+                scale: 'scale 1s linear infinite',
+                bounceLower: 'bounceLower 1s infinite',
+                flicker: 'flicker 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            fontFamily: {
+                sarabun: ['var(--font-sarabun)'],
+                kanit: ['var(--font-kanit)'],
+            },
+            colors: {
+                ...defaultColors,
+                primary: withOpacityValue('--tw-color-primary'),
+                secondary: withOpacityValue('--tw-color-secondary'),
+                warning: '#FBBF24',
+                error: '#EF4444',
+            },
+        },
     },
-  },
-  plugins: [],
+    plugins: [require('@tailwindcss/typography')],
 }
