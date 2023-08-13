@@ -1,12 +1,14 @@
 const component = require('./components/config')
-const moduleComponent = require('./modules/config')
-const moduleStore = require('./stores/config')
-const modulePage = require('./pages/config')
+const module = require('./modules/config')
+const store = require('./stores/config')
+const page = require('./pages/config')
+const util = require('./utils/config')
 
 // Add here more generators
 module.exports = function (plop) {
     plop.setGenerator('component', component)
-    plop.setGenerator('module', moduleComponent)
-    plop.setGenerator('store', { ...moduleStore(plop) })
-    plop.setGenerator('page', modulePage)
+    plop.setGenerator('utils', page)
+    plop.setGenerator('module', module)
+    plop.setGenerator('store', { ...store(plop) })
+    plop.setGenerator('page', util)
 }

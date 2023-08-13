@@ -1,4 +1,4 @@
-import { env } from '@/libs/env'
+import { env } from '@/utils/env'
 
 /**
  * A logger function that will only logs on development

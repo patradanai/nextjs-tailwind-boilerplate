@@ -15,6 +15,8 @@ export const env = createEnv({
     client: {
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
         NEXT_PUBLIC_LOGGER: z.boolean().default(false),
+        NEXT_PUBLIC_API_URL: z.string().url(),
+        NEXT_PUBLIC_API_TIMEOUT: z.number(),
     },
     /**
      * What object holds the environment variables at runtime.
@@ -24,5 +26,7 @@ export const env = createEnv({
         NEXT_PUBLIC_LOGGER: process.env.NEXT_PUBLIC_LOGGER,
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
             process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
+        NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+        NEXT_PUBLIC_API_TIMEOUT: process.env.NEXT_PUBLIC_API_TIMEOUT,
     },
 })

@@ -43,4 +43,14 @@ describe('Button Component', () => {
 
         expect(screen.getByTestId('spinner-id')).toBeVisible()
     })
+
+    test('Case 4: Default Color should be primary', () => {
+        render(
+            <Button variant={'contained'} size={'md'}>
+                test
+            </Button>
+        )
+
+        const el = screen.getByText(/test/i)
+    })
 })

@@ -11,12 +11,7 @@ import { NextPage } from 'next'
 interface Props {}
 
 const ButtonGroup: NextPage<Props> = () => {
-  return (
-    <div>
-      ButtonGroup
-    </div>
-  )
+    return <div>ButtonGroup</div>
 }
- 
- 
+
 export default ButtonGroup

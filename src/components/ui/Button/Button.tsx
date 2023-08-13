@@ -2,7 +2,7 @@ import React from 'react'
 
 import { NextPage } from 'next'
 
-import { cn } from '@/libs/cn'
+import { cn } from '@/utils/cn'
 
 type Color = 'primary' | 'secondary' | 'success' | 'error'
 type Variant = 'text' | 'contained' | 'outlined'
